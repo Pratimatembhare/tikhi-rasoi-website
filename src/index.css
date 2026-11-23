@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-accent: #FF6B35;
+  --color-dark: #0B0B0B;
+  --color-dark-light: #1A1A1A;
+  
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --color-gold: #D4AF37;
+    --color-accent: #FF6B35;
+    --color-dark: #0B0B0B;
+    --color-dark-light: #1A1A1A;
+  }
+  
+  html, body {
+    @apply bg-[#0B0B0B] text-white font-body overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold leading-tight;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-full transition-all duration-300 hover:bg-[#F3E5AB] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(212,175,55,0.3)];
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-transparent text-[#D4AF37] font-semibold border border-[#D4AF37] rounded-full transition-all duration-300 hover:bg-[#D4AF37] hover:text-black;
+  }
+  
+  .subtitle {
+    @apply font-body text-[#D4AF37] text-sm font-semibold uppercase tracking-[2px] block mb-4;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
